@@ -36,7 +36,7 @@ This is a modern Android application built with Kotlin that allows users to auth
 
 1.  **Clone the Repository:**
     ```sh
-    git clone <your-repository-link>
+    git clone https://github.com/DiwanMalla/s8073084_assignment2.git
     ```
 2.  **Open in Android Studio:**
     - Open Android Studio.
