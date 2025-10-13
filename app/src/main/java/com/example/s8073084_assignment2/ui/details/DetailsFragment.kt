@@ -1,10 +1,33 @@
 package com.example.s8073084_assignment2.ui.details
 
+import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.example.s8073084_assignment2.R
+import com.example.s8073084_assignment2.databinding.FragmentDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailsFragment : Fragment(R.layout.fragment_details) {
-    // We will add the view binding and logic later
+
+    private var _binding: FragmentDetailsBinding? = null
+    private val binding get() = _binding!!
+
+    private val args: DetailsFragmentArgs by navArgs()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentDetailsBinding.bind(view)
+
+        val entity = args.entity
+        binding.property1Text.text = entity.property1
+        binding.property2Text.text = entity.property2
+        binding.descriptionText.text = entity.description
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
