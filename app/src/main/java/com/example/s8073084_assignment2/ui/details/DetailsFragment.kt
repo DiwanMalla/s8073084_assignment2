@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.navigation.ui.setupWithNavController
 import com.bumptech.glide.Glide
 import com.example.s8073084_assignment2.R
 import com.example.s8073084_assignment2.databinding.FragmentDetailsBinding
@@ -24,15 +26,10 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
 
         val entity = args.entity
 
-        // Set the title on the CollapsingToolbarLayout
+        // Set up the toolbar with the NavController
+        val navController = findNavController()
+        binding.collapsingToolbar.setupWithNavController(binding.toolbar, navController)
         binding.collapsingToolbar.title = entity.title
-
-        // Set up the toolbar for navigation
-        (activity as? AppCompatActivity)?.setSupportActionBar(binding.toolbar)
-        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        binding.toolbar.setNavigationOnClickListener {
-            activity?.onBackPressedDispatcher?.onBackPressed()
-        }
 
         // Load the book image
         Glide.with(this)
