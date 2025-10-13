@@ -75,6 +75,9 @@ dependencies {
     // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+
+    // DataStore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
     
     // Testing
     testImplementation(libs.junit)
