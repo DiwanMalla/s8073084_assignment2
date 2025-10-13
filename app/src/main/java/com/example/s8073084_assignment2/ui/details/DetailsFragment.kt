@@ -5,7 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import androidx.navigation.ui.setupWithNavController
+import com.bumptech.glide.Glide
 import com.example.s8073084_assignment2.R
 import com.example.s8073084_assignment2.databinding.FragmentDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,6 +33,11 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         binding.toolbar.setNavigationOnClickListener {
             activity?.onBackPressedDispatcher?.onBackPressed()
         }
+
+        // Load the book image
+        Glide.with(this)
+            .load(R.raw.book)
+            .into(binding.headerImage)
 
         // Populate the rest of the views
         binding.authorText.text = entity.author

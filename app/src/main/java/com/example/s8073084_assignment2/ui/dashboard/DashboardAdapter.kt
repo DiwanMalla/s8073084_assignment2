@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.s8073084_assignment2.R
 import com.example.s8073084_assignment2.data.Entity
 import com.example.s8073084_assignment2.databinding.ItemEntityBinding
 
@@ -27,6 +29,10 @@ class DashboardAdapter(private val onItemClicked: (Entity) -> Unit) : ListAdapte
         fun bind(entity: Entity) {
             binding.titleText.text = entity.title
             binding.authorText.text = entity.author
+
+            Glide.with(binding.root.context)
+                .load(R.raw.book)
+                .into(binding.bookIcon)
         }
     }
 

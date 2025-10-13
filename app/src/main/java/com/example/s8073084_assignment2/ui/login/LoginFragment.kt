@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.example.s8073084_assignment2.R
 import com.example.s8073084_assignment2.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,6 +29,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         _binding = FragmentLoginBinding.bind(view)
 
         setupSpinner()
+        setupGif()
 
         binding.loginButton.setOnClickListener {
             val username = binding.usernameEditText.text.toString().trim()
@@ -63,6 +65,13 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         val locations = arrayOf("Footscray", "Sydney", "Brisbane")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, locations)
         binding.locationSpinner.adapter = adapter
+    }
+
+    private fun setupGif() {
+        Glide.with(this)
+            .asGif()
+            .load(R.raw.login_animation)
+            .into(binding.iconImage)
     }
 
     override fun onDestroyView() {
