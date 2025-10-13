@@ -31,9 +31,9 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         binding.collapsingToolbar.setupWithNavController(binding.toolbar, navController)
         binding.collapsingToolbar.title = entity.title
 
-        // Load the book image
+        // Load the book image from the drawable folder
         Glide.with(this)
-            .load(R.raw.book)
+            .load(R.drawable.book) // Loading from drawable now
             .into(binding.headerImage)
 
         // Populate the rest of the views
