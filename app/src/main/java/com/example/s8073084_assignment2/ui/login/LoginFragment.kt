@@ -2,6 +2,7 @@ package com.example.s8073084_assignment2.ui.login
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -26,11 +27,18 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentLoginBinding.bind(view)
 
+        setupSpinner()
+
         binding.loginButton.setOnClickListener {
             val username = binding.usernameEditText.text.toString().trim()
             val password = binding.passwordEditText.text.toString().trim()
-            // TODO: Replace with your actual class location
-            viewModel.login("footscray", username, password) 
+            val location = binding.locationSpinner.selectedItem.toString().lowercase()
+
+            if (username.isNotEmpty() && password.isNotEmpty()) {
+                 viewModel.login(location, username, password)
+            } else {
+                Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
+            }
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
@@ -49,6 +57,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 }
             }
         }
+    }
+
+    private fun setupSpinner() {
+        val locations = arrayOf("Footscray", "Sydney", "Brisbane")
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, locations)
+        binding.locationSpinner.adapter = adapter
     }
 
     override fun onDestroyView() {
