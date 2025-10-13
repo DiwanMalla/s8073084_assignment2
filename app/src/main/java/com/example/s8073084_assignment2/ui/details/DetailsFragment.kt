@@ -21,8 +21,10 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         _binding = FragmentDetailsBinding.bind(view)
 
         val entity = args.entity
-        binding.property1Text.text = entity.property1
-        binding.property2Text.text = entity.property2
+        binding.titleText.text = entity.title
+        binding.authorText.text = entity.author
+        binding.genreText.text = entity.genre
+        binding.yearText.text = entity.publicationYear.toString()
         binding.descriptionText.text = entity.description
     }
 

@@ -5,7 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Entity(
-    val property1: String,
-    val property2: String,
+    val title: String,
+    val author: String,
+    val genre: String,
+    val publicationYear: Int,
     val description: String
 ) : Parcelable

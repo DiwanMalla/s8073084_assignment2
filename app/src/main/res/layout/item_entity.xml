@@ -15,25 +15,25 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/property1_text"
+            android:id="@+id/title_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Property 1 Value" />
+            tools:text="Book Title" />
 
         <TextView
-            android:id="@+id/property2_text"
+            android:id="@+id/author_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            app:layout_constraintTop_toBottomOf="@+id/property1_text"
+            app:layout_constraintTop_toBottomOf="@id/title_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Property 2 Value" />
+            tools:text="Author Name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

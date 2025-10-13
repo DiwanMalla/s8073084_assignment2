@@ -13,45 +13,87 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/property1_label"
+            android:id="@+id/title_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Property 1"
+            android:text="Title"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/property1_text"
+            android:id="@+id/title_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            app:layout_constraintTop_toBottomOf="@id/property1_label"
+            app:layout_constraintTop_toBottomOf="@id/title_label"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Value for Property 1" />
+            tools:text="Book Title" />
 
         <TextView
-            android:id="@+id/property2_label"
+            android:id="@+id/author_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Property 2"
+            android:text="Author"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-            app:layout_constraintTop_toBottomOf="@id/property1_text"
+            app:layout_constraintTop_toBottomOf="@id/title_text"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/property2_text"
+            android:id="@+id/author_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            app:layout_constraintTop_toBottomOf="@id/property2_label"
+            app:layout_constraintTop_toBottomOf="@id/author_label"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Value for Property 2" />
+            tools:text="Author Name" />
+
+        <TextView
+            android:id="@+id/genre_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Genre"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            app:layout_constraintTop_toBottomOf="@id/author_text"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/genre_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintTop_toBottomOf="@id/genre_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Fiction" />
+
+        <TextView
+            android:id="@+id/year_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Publication Year"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            app:layout_constraintTop_toBottomOf="@id/genre_text"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/year_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintTop_toBottomOf="@id/year_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="1960" />
 
         <TextView
             android:id="@+id/description_label"
@@ -60,7 +102,7 @@
             android:layout_marginTop="16dp"
             android:text="Description"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-            app:layout_constraintTop_toBottomOf="@id/property2_text"
+            app:layout_constraintTop_toBottomOf="@id/year_text"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -72,7 +114,7 @@
             app:layout_constraintTop_toBottomOf="@id/description_label"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="This is a long description of the entity, providing more details and context about it." />
+            tools:text="A long description of the book." />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

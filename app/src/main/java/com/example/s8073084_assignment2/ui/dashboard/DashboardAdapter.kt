@@ -25,15 +25,15 @@ class DashboardAdapter(private val onItemClicked: (Entity) -> Unit) : ListAdapte
 
     class EntityViewHolder(private val binding: ItemEntityBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(entity: Entity) {
-            binding.property1Text.text = entity.property1
-            binding.property2Text.text = entity.property2
+            binding.titleText.text = entity.title
+            binding.authorText.text = entity.author
         }
     }
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Entity>() {
             override fun areItemsTheSame(oldItem: Entity, newItem: Entity): Boolean {
-                return oldItem.property1 == newItem.property1 // Assuming property1 is a unique identifier
+                return oldItem.title == newItem.title
             }
 
             override fun areContentsTheSame(oldItem: Entity, newItem: Entity): Boolean {
