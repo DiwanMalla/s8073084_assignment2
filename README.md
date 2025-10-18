@@ -16,11 +16,6 @@ This is a modern Android application built with Kotlin that allows users to auth
 - **Dependency Injection:** Uses Hilt for managing dependencies throughout the application.
 - **Unit Tested:** Includes unit tests for ViewModels to ensure business logic is correct.
 
-## 📸 Screenshots
-
-| Login Screen | Dashboard | Details Screen (Light) | Details Screen (Dark) |
-| :---: | :---: | :---: | :---: |
-| *Your Screenshot Here* | *Your Screenshot Here* | *Your Screenshot Here* | *Your Screenshot Here* |
 
 
 ## 🏗 Architecture
