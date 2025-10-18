@@ -37,7 +37,15 @@ class DashboardViewModelTest {
     @Test
     fun `loadDashboard success updates state to Success`() = runTest {
         // Given
-        val entities = listOf(Entity("prop1", "prop2", "desc"))
+        val entities = listOf(
+            Entity(
+                title = "Sample Title",
+                author = "Sample Author",
+                genre = "Sample Genre",
+                publicationYear = 2024,
+                description = "Sample Description"
+            )
+        )
         val dashboardResponse = DashboardResponse(entities, 1)
         coEvery { repository.getDashboardData(any()) } returns dashboardResponse
 
